@@ -1,0 +1,169 @@
+
+<html>
+<body>
+    <div class="text-align-center">
+        <button id="submit" class="btn-submit">search</button>
+    </div>
+    <div><label id="bus_Name"></label></div>
+    <div><label id="contact_Name"></label></div>
+    <div><label id="catagorie"></label></div>
+    <div><label id="city_Name"></label></div>
+    <div><label id="province_Name"></label></div>
+    <div><label id="country_Name"></label></div>
+    <div><label id="phone_number"></label></div>
+    <div><label id="discription"></label></div>
+
+    <div id="divAdverts"></div>
+
+</body>
+
+</html>
+
+<!--<script src="FirebaseConnection.js"></script>-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+<!--  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>-->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC_Ce7X7W-rcX8NksvYWl6B0bLZorynEn0",
+        authDomain: "help-us-to-help-u-web-data.firebaseapp.com",
+        databaseURL: "https://help-us-to-help-u-web-data.firebaseio.com",
+        projectId: "help-us-to-help-u-web-data",
+        storageBucket: "help-us-to-help-u-web-data.appspot.com",
+        messagingSenderId: "156853689026",
+        appId: "1:156853689026:web:73cb2c8f3284eae430795b",
+        measurementId: "G-SP5WB878LY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+</script>
+
+
+<script>
+
+    const submit = document.getElementById('submit');
+
+    const database = firebase.database();
+
+    submit.addEventListener('click', (e) => {
+        e.preventDefault();
+       // var i = 0;
+        var userDataRef = firebase.database().ref("Adverts").orderByKey();
+        userDataRef.once("value").then(function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+               // i = i++;
+                var key = childSnapshot.key;
+                var childData = childSnapshot.val();
+
+                var busname = childSnapshot.val().busness_name;
+                var city_Name = childSnapshot.val().city;
+           
+                var contactname = childSnapshot.val().contact_name;
+                var disc = childSnapshot.val().descript;
+                var catagorie= childSnapshot.val().category;
+                var pro = childSnapshot.val().province;
+                var country = childSnapshot.val().country;
+                var pn = childSnapshot.val().phone_number ;
+
+                  document.getElementById("bus_Name").innerHTML = busname;
+                document.getElementById("contact_Name").innerHTML = contactname;
+
+
+                var para = document.createElement("p");
+
+                var node = document.createTextNode(pn);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+
+                //var para = document.createElement("p");
+
+                //var node = document.createTextNode(country);
+                //para.appendChild(node);
+                //var element = document.getElementById("divAdverts");
+                //element.appendChild(para);
+
+
+                //var para = document.createElement("p");
+
+                //var node = document.createTextNode(pro);
+                //para.appendChild(node);
+                //var element = document.getElementById("divAdverts");
+                //element.appendChild(para);
+
+
+                var para = document.createElement("p");
+
+                var node = document.createTextNode(catagorie);
+                para.appendChild(node); 
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+
+                //var para = document.createElement("p");
+
+                //var node = document.createTextNode(city_Name);
+                //para.appendChild(node);
+                //var element = document.getElementById("divAdverts");
+                //element.appendChild(para);
+
+                var para = document.createElement("p");
+                var node = document.createTextNode(contactname);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+                var para = document.createElement("p");
+                var node = document.createTextNode(busname);
+
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+
+                    var para = document.createElement("p");
+                var node = document.createTextNode(disc);
+
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+                element.appendChild(para);
+                var hrtag = document.createElement("hr");
+
+                element.appendChild(hrtag);
+
+
+            });
+        });
+    });
+        // -------------- working --------------------------------
+    //    var ref = firebase.database().ref();
+    //    ref.on("value", function (snapshot) {
+    //        console.log(snapshot.val());
+
+    //        var newPlayer = snapshot.val();
+    //        console.log("country:" + newPlayer.Adverts.country);
+    //        console.log("country:" + newPlayer.Adverts.newPlayer.busness_name.country);
+    //        console.log("province:" + newPlayer.Adverts.newPlayer.busness_name.province);
+    //        console.log("city:" + newPlayer.Adverts.newPlayer.busness_name.city);
+    //        console.log("busness_name:" + newPlayer.Adverts.newPlayer.busness_name.busness_name);
+    //        console.log("contact_name: " + newPlayer.contact_name);
+    //        console.log("category: " + newPlayer.category);
+    //        console.log("Previous Player: " + contact_name);
+
+    //    }, function (error) {
+    //        console.log("Error: " + error.code);
+    //    });
+
+    //});
+
+
+</script>
+

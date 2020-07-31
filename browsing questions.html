@@ -1,0 +1,428 @@
+<head>
+
+
+
+    <script lang="text/javascript">
+        //makes it so we can use java
+
+        function getStates() { //function
+            //alert ("Daksh");
+
+            var list1 = document.getElementById("countryList"); //to put countrys in this
+            var list2 = document.getElementById("provinceList");//to pur province
+
+            var list1SelectedValue = list1.options[list1.selectedIndex].value;//to make it so if we click it it shows the countrys
+            // countrylist<options>[3].value
+            //alert (list1SelectedValue);
+            if (list1SelectedValue == "South Africa") {  //list if south africa is selected
+                list2.options[0] = new Option("--Select--", ""); //optioins
+                list2.options[1] = new Option("Gauteng", "Gauteng"); //optioins
+                list2.options[2] = new Option("Western Cape", "Western Cape"); //optioins
+            }
+
+            else if (list1SelectedValue == "India") { //list if india is selected
+                list2.options.length = 0;
+                list2.options[0] = new Option("--Select--", ""); //optioins
+                list2.options[1] = new Option("Delhi", "Delhi"); //optioins
+                list2.options[2] = new Option("Punjab", "Punjab"); //optioins
+
+            }
+
+            else if (list1SelectedValue == "United States Of America") {//if unitedstates is selected what should show
+
+                list2.options.length = 0;
+                list2.options[0] = new Option("--Select--", ""); //optioins
+                list2.options[1] = new Option("Calirfornia", "Calirfornia"); //optioins
+                list2.options[2] = new Option("Alabama", "Alabama"); //optioins
+
+            }
+            //alert ("Daksh");
+
+
+        }
+        function getcity() { //fuction for city
+            var list2 = document.getElementById("provinceList");//list2 is the province list
+            var list3 = document.getElementById("cityList");//list3 is city list
+
+            var list2SelectedValue = list2.options[list2.selectedIndex].value;//if list2 value should show the list3
+            //alert (list1SelectedValue);
+            if (list2SelectedValue == "Gauteng") {//if gauteg is selected these optionis show
+                //alert (list1SelectedValue);
+
+                //var options = ["1", "2", "3", "4", "5"];
+                // alert (list2);
+
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("johannesburg", "johannesburg");//optioins
+                list3.options[2] = new Option("Tshwane", "Tshwane");//optioins
+            }
+            else if (list2SelectedValue == "Western Cape") {//if western cape is selected these options show
+
+                list3.options.length = 0;
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("Cape Town", "Cape Town");//optioins
+                list3.options[2] = new Option("West Coast", "West Coast");//optioins
+
+            }
+            else if (list2SelectedValue == "Delhi") {//if delhi is selected these options show
+
+                list3.options.length = 0;
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("Nehru Place", "Nehru Place");//optioins
+                list3.options[2] = new Option("Chanakya Puri", "Chanakya Puri");//optioins
+
+            }
+            else if (list2SelectedValue == "Punjab") {//if punjab is selected thee options show
+
+                list3.options.length = 0;
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("Amritsar", "Amritsar");//optioins
+                list3.options[2] = new Option("Ludhiana", "Ludhiana");//optioins
+
+            }
+
+            else if (list2SelectedValue == "Calirfornia") {//if calerfornia is selected these options show
+
+                list3.options.length = 0;
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("Los Angeles", "Los Angeles");//optioins
+                list3.options[2] = new Option("San Diego", "San Diego");//optioins
+
+            }
+            else if (list2SelectedValue == "Alabama") {//if alabama is selected these options show
+
+                list3.options.length = 0;
+                list3.options[0] = new Option("--Select--", "");//optioins
+                list3.options[1] = new Option("Birmingham", "Birmingham");//optioins
+                list3.options[2] = new Option("Montgomery", "Montgomery");//optioins
+
+            }
+            //alert ("Daksh");
+
+
+        }
+
+    </script><!-- script tag end    -->
+
+</head><!--  head tag end  -->
+
+
+
+<head>
+    <!--head start    -->
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="Style.css" /> <!--    link tag-->
+
+</head> <!-- head end   -->
+<html>
+    <body>
+        <!-- body start   -->
+
+
+        <div class="navbar">
+            <!--  create the navigation bar  -->
+            <a href="index.html">Home</a> <!--   values for the navigation bar -->
+            <a href="browsing questions.html">Browsing</a>
+            <a href="creatquestion.html">Creating</a>
+
+        </div>
+        <p>
+            <br />
+            <br />
+        </p>
+        <main>
+            <!-- id for this form   -->
+            <form id="frmCreateAdvert">
+
+                <!-- table tag open   -->
+                <table style="background-color:darkorange">
+
+                    <!-- table row start   -->
+                    <tr>
+
+
+                        <td width="10%">Select a Country :</td><!--   table column  -->
+                        <td width="15%">
+                            <select name="countryList" id="countryList" onClick="getStates()">
+                                <!-- country list optioins  -->
+                                <option value="" selected>--- Select one ---</option><!-- option   -->
+                                <option value="South Africa">South Africa</option>
+                                <option value="India">India</option>
+                                <option value="United States Of America">United States Of America</option>
+                            </select>
+                        </td>
+
+
+                        <td width="20%">Select a State/province/union territories :</td><!--the province start    -->
+                        <td>
+
+                            <select name="provinceList" id="provinceList" onClick="getcity()">
+                            </select>
+                        </td>
+
+                        <td>
+
+                            <p>Select a City :</p><!--the city start     -->
+                        <td>
+                            <select name="cityList" id="cityList">
+                            </select>
+                        </td>
+
+
+                        <td>Select a Categories :</td>
+                        <td>
+                            <select name="categoryList" id="categoryList">
+                                <!--all the options that go in the category    -->
+                                <option value="" selected>--- Select one ---</option>
+                                <option value="IT">IT</option>
+                                <option value="Learning">Learning</option>
+                                <option value="Services">Services</option>
+                                <option value="Buisness">Business</option>
+                                <option value="Selling">Selling</option>
+                                <option value="Company">Company</option>
+                                <option value="Buying">Buying</option>
+                                <option value="Bisness Services">Bisness Services</option>
+                                <option value="Health and saftey">Health and saftey</option>
+                                <option value="Small bisnesses">Small bisnesses</option>
+                                <option value="Technology">Technology</option>
+
+                            </select>
+                    </tr>
+
+
+
+                </table>
+                
+                <div class="text-align-center" style="text-align:center; ">
+                    <button id="btnSubmit" class="btn-submit" style="background-color: dodgerblue; width:90px; height:50px; color:white;font-size:20px ">search</button><!--the button to search    -->
+                </div>
+
+                <div><label id="bus_Name"></label></div><!-- id for data  -->
+                <div><label id="contact_Name"></label></div>
+                <div><label id="catagorie"></label></div>
+                <div><label id="city_Name"></label></div>
+                <div><label id="province_Name"></label></div>
+                <div><label id="country_Name"></label></div>
+                <div><label id="phone_number"></label></div>
+                <div><label id="discription"></label></div>
+
+                <!-- in this Div we are populating the values coming from Database-->
+                <div id="divAdverts" style="width:100%">
+                    <p style="text-align:center;font-size:30px"> Please search the database by selecting the options given above when done hit search</p>
+                    <p style="text-align:center; color:darkred; font-size:25px"> If you get no infomation there where no reults found </p>
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+                    <img style="height:150;width:1350;" src="https://madmartech.com/wp-content/uploads/2019/05/970x250-1.png" /></a>
+
+                </div>
+
+
+
+            </form>
+        </main>
+    </body>
+</html>
+<!--<script src="FirebaseConnection.js"></script>-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+<!--  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>-->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {//code to configure our firebase
+        apiKey: "AIzaSyC_Ce7X7W-rcX8NksvYWl6B0bLZorynEn0",
+        authDomain: "help-us-to-help-u-web-data.firebaseapp.com",
+        databaseURL: "https://help-us-to-help-u-web-data.firebaseio.com",
+        projectId: "help-us-to-help-u-web-data",
+        storageBucket: "help-us-to-help-u-web-data.appspot.com",
+        messagingSenderId: "156853689026",
+        appId: "1:156853689026:web:73cb2c8f3284eae430795b",
+        measurementId: "G-SP5WB878LY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+</script>
+
+
+<script>
+
+    const submit = document.getElementById('btnSubmit');
+
+    const database = firebase.database();
+    var iVal = 0;
+    submit.addEventListener('click', (e) => {//if the button is clicked what should happen
+        e.preventDefault();
+
+        var cityName = document.getElementById("cityList").value;
+
+        document.getElementById("divAdverts").innerHTML = ""; // before loading the data from database we are clearing anything in it
+
+        const dbRef = firebase.database().ref("Adverts");//here we are making it read the database under adverts
+        dbRef.orderByChild("city").equalTo(cityName).on("child_added", (snap) => {
+
+            iVal = 1;
+            // alert("inside --"+iVal);
+            var busname = snap.val().busness_name;//in these lines we are making it so that we can call our data if needed
+            var city_Name = snap.val().city;
+
+            var contactname = snap.val().contact_name;
+            var disc = snap.val().descript;
+            var catagorie = snap.val().category;
+            var pro = snap.val().province;
+            var country = snap.val().country;
+            var pn = snap.val().phone_number;
+
+            var elementDiv = document.getElementById("divAdverts");
+
+            var para = document.createElement("p"); // we are creating an html tag "Paragraph"
+            var node = document.createTextNode("Business Name :" + busname);
+            para.appendChild(node);
+            elementDiv.appendChild(para);
+            //document.getElementById("divAdverts").appendChild(para);
+
+
+            var para = document.createElement("p");
+            var node = document.createTextNode("Contact Name:" + contactname);
+            para.appendChild(node);
+            elementDiv.appendChild(para);
+
+
+
+            var para = document.createElement("p");
+            var node = document.createTextNode("Phone Number:" + pn);
+            para.appendChild(node);
+            elementDiv.appendChild(para);
+
+
+
+            var para = document.createElement("p");
+            var node = document.createTextNode("Discription:" + disc);
+            para.appendChild(node);
+            elementDiv.appendChild(para);
+
+            var para = document.createElement("p");
+            var node = document.createTextNode("category:" + catagorie);
+            para.appendChild(node);
+            elementDiv.appendChild(para);
+            // var hrtag = document.createElement("hr");
+            //elementDiv.appendChild(hrtag);
+            //document.getElementById("divAdverts").appendChild(hrtag);
+
+            document.getElementById("divAdverts").appendChild(document.createElement("hr"));
+
+        });
+    });
+
+        // -------------- working Start --------------------------------
+        //    var ref = firebase.database().ref();
+        //    ref.on("value", function (snapshot) {
+        //        console.log(snapshot.val());
+
+        //        var newPlayer = snapshot.val();
+        //        console.log("country:" + newPlayer.Adverts.country);
+        //        console.log("country:" + newPlayer.Adverts.newPlayer.busness_name.country);
+        //        console.log("province:" + newPlayer.Adverts.newPlayer.busness_name.province);
+        //        console.log("city:" + newPlayer.Adverts.newPlayer.busness_name.city);
+        //        console.log("busness_name:" + newPlayer.Adverts.newPlayer.busness_name.busness_name);
+        //        console.log("contact_name: " + newPlayer.contact_name);
+        //        console.log("category: " + newPlayer.category);
+        //        console.log("Previous Player: " + contact_name);
+
+        //    }, function (error) {
+        //        console.log("Error: " + error.code);
+        //    });
+
+        //});
+        // -------------- working End --------------------------------
+
+
+
+        //var para = document.createElement("p");
+        //var node = document.createTextNode("No Data found for City" + cityName);
+        //para.appendChild(node);
+        //var element = document.getElementById("divAdverts");
+
+
+
+
+
+        //console.log("before call");
+        //const dbRef = firebase.database().ref("Adverts");
+        //var snap;
+        //var userDataRef1 = firebase.database().ref("Adverts").orderByChild("city").equalTo("Nehru Place").on("child_added", (snap));
+        //console.log(userDataRef1.val());
+        //console.log("AFter call");
+
+        //dbRef.orderByChild("city").equalTo("Nehru Place").on("child_added", (snap) => {
+        //    console.log(userDataRef.val());
+        //});
+
+        /*
+        var userDataRef = firebase.database().ref("Adverts").orderByKey();
+        userDataRef.once("value").then(function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+                // i = i++;
+
+                var key = childSnapshot.key;
+                var childData = childSnapshot.val();
+
+                var busname = childSnapshot.val().busness_name;
+                var city_Name = childSnapshot.val().city;
+
+                var contactname = childSnapshot.val().contact_name;
+                var disc = childSnapshot.val().descript;
+                var catagorie = childSnapshot.val().category;
+                var pro = childSnapshot.val().province;
+                var country = childSnapshot.val().country;
+                var pn = childSnapshot.val().phone_number;
+
+
+                var para = document.createElement("p");
+                var node = document.createTextNode( "Business Name :" + busname);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+                var para = document.createElement("p");
+                var node = document.createTextNode("Contact Name:" + contactname);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+
+                var para = document.createElement("p");
+                var node = document.createTextNode("Phone Number:" + pn);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+
+                var para = document.createElement("p");
+                var node = document.createTextNode("Discription:" + disc);
+                para.appendChild(node);
+                var element = document.getElementById("divAdverts");
+                element.appendChild(para);
+
+
+                var hrtag = document.createElement("hr");
+
+                element.appendChild(hrtag);
+
+
+            });
+        });*/
+
+ 
+
+
+</script>
+

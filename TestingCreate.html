@@ -1,0 +1,297 @@
+
+<head>
+    <link rel="stylesheet"
+          type="text/css"
+          href="Style.css" />
+
+    <script lang="text/javascript">
+
+            function getStates() {
+                //alert ("Daksh");
+                var list1 = document.getElementById("countryList");
+                var list2 = document.getElementById("provinceList");
+
+                var list1SelectedValue = list1.options[list1.selectedIndex].value;
+                //alert (list1SelectedValue);
+                if (list1SelectedValue == "South Africa") {
+                    list2.options[0] = new Option("--Select--", "");
+                    list2.options[1] = new Option("Gauteng", "Gauteng");
+                    list2.options[2] = new Option("Western Cape", "Western Cape");
+                }
+
+                else if (list1SelectedValue == "India") {
+                    list2.options.length = 0;
+                    list2.options[0] = new Option("--Select--", "");
+                    list2.options[1] = new Option("Delhi", "Delhi");
+                    list2.options[2] = new Option("Punjab", "Punjab");
+
+                }
+
+                else if (list1SelectedValue == "United States Of America") {
+
+                    list2.options.length = 0;
+                    list2.options[0] = new Option("--Select--", "");
+                    list2.options[1] = new Option("Calirfornia", "Calirfornia");
+                    list2.options[2] = new Option("Alabama", "Alabama");
+
+                }
+                //alert ("Daksh");
+
+
+            }
+            function getcity() {
+                var list2 = document.getElementById("provinceList");
+                var list3 = document.getElementById("cityList");
+
+                var list2SelectedValue = list2.options[list2.selectedIndex].value;
+                //alert (list1SelectedValue);
+                if (list2SelectedValue == "Gauteng") {
+                    //alert (list1SelectedValue);
+
+                    // alert (list2);
+
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("johannesburg", "johannesburg");
+                    list3.options[2] = new Option("Tshwane", "Tshwane");
+                }
+                else if (list2SelectedValue == "Western Cape") {
+
+                    list3.options.length = 0;
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("Cape Town", "Cape Town");
+                    list3.options[2] = new Option("West Coast", "West Coast");
+
+                }
+                else if (list2SelectedValue == "Delhi") {
+
+                    list3.options.length = 0;
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("Nehru Place", "Nehru Place");
+                    list3.options[2] = new Option("Chanakya Puri", "Chanakya Puri");
+
+                }
+                else if (list2SelectedValue == "Punjab") {
+
+                    list3.options.length = 0;
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("Amritsar", "Amritsar");
+                    list3.options[2] = new Option("Ludhiana", "Ludhiana");
+
+                }
+
+                else if (list2SelectedValue == "Calirfornia") {
+
+                    list3.options.length = 0;
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("Los Angeles", "Los Angeles");
+                    list3.options[2] = new Option("San Diego", "San Diego");
+
+                }
+                else if (list2SelectedValue == "Alabama") {
+
+                    list3.options.length = 0;
+                    list3.options[0] = new Option("--Select--", "");
+                    list3.options[1] = new Option("Birmingham", "Birmingham");
+                    list3.options[2] = new Option("Montgomery', 'Montgomery");
+
+                }
+                //alert ("Daksh");
+
+
+            }
+
+    </script>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+
+    <style>
+
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+                            width: 75vw;
+                      height: 60vw;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+        form {
+           
+               width: 400px;
+
+            border: solid 1px #EBEBEB;
+            padding: 5rem;
+            align-content: center;
+            vertical-align: central;
+            margin-left: 300px;
+         
+        }
+
+        button {
+            margin-top: 2rem;
+        }
+
+        .bg-4 {
+            background-color: cadetblue;
+        }
+        .bg-5 {
+            background-color:darkslategrey;
+        }
+
+        .font-color-1 {
+            color: white;
+        }
+
+        .text-align-left {
+            text-align: left;
+        }
+        .text-align-center {
+            text-align: center;
+        }
+        .btn-submit{
+            color:white;
+            background-color:orchid;
+            width:100px;
+            height:37px;
+            font:larger;
+        }
+
+    </style>
+    <style>
+        .bg-1 {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #474e5d;
+            color: #ffffff;
+        }
+
+        .bg-3 {
+            background-color: #ffffff;
+            color: #555555;
+        }
+        .hr-1 {
+            background-color: greenyellow;
+            color: red;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+    </style>
+
+
+</head>
+
+<html>
+<body class="bg-4">
+
+    <div class="navbar">
+        <a href="index.html"> Home</a>
+        <a href="browsing questions.html"> Browsing</a>
+        <a href="creatquestion.html"> Creating</a>
+
+    </div>
+
+    <main>
+
+        <form id="frmCreateAdvert" class="bg-5" style="vertical-align:top;">
+
+            <!-- Country start -->
+            <div class="font-color-1 text-align-center" style="margin-top:-50px;">
+                Select a Country :
+            </div>
+            <div class="text-align-center">
+                <select name="countryList" id="countryList" onClick="getStates()">
+                    <option value="" selected>--- Select one ---</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="India">India</option>
+                    <option value="United States Of America">United States Of America</option>
+                </select>
+            </div>
+            <hr class="hr-1" />
+            <!-- Country End -->
+            <!-- Province start -->
+
+            <div class="font-color-1 text-align-center">
+                <label>Select a State/province/union territories :</label>
+            </div>
+            <div class="text-align-center">
+
+                <select name="provinceList" id="provinceList" onClick="getcity()">
+                    <option value="" selected>--- Select one ---</option>
+                </select>
+            </div>
+            <hr class="hr-1" />
+            <!-- Province End -->
+            <!--city Start-->
+
+            <div class="font-color-1 text-align-center">
+                <p>Select a City :</p>
+            </div>
+            <div class="text-align-center">
+                <select name="cityList" id="cityList">
+                    <option value="" selected>--- Select one ---</option>
+                </select>
+                <hr class="hr-1" />
+              </div>
+                <div class="text-align-center font-color-1">Select a Categories :</div>
+                <div class="text-align-center">
+                    <select name="categoryList" id="categoryList">
+                        <option value="" selected>--- Select one ---</option>
+                        <option value="IT ">IT</option>
+                        <option value="Learning">Learning</option>
+                        <option value="Services">Services</option>
+                        <option value="Bisness">Bisness</option>
+                        <option value="Selling">Selling</option>
+                        <option value="Company">Company</option>
+                        <option value="Buying">Buying</option>
+                        <option value="Bisness Services">Bisness Services</option>
+                        <option value="Health and saftey">Health and saftey</option>
+                        <option value="Small bisnesses">Small bisnesses</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                </div>
+                <hr class="hr-1" />
+                <!--city End-->
+                    
+                        <div class="font-color-1 text-align-center">Name:</div>
+                        <div class="text-align-center">
+                                <input type="text" id="cname" name="cname"></div>
+
+                        <hr class="hr-1" />
+
+                        <div class="font-color-1 text-align-center">Phone Number:</div>
+                        <div class="text-align-center"><input type="text" id="phonenumber" name="phonenumber"></div>
+
+                        <hr class="hr-1" />                        
+                            
+                                <div class="font-color-1 text-align-center";> description  </div>
+
+                                <div class="text-align-center"> 
+                                <textarea id="description" name="description" rows="4" cols="50">  </textarea>
+                            </div>
+                            <div>
+                                <div class="text-align-center">
+                                <button type="submit" class="btn-submit">Submit</button>
+                                </div>
+                            </div> 
+
+                        <hr class="hr-1" />
+</form >
+    </main>
+    <script src="FirebaseConnection.js"></script>
+</body>
+</html>
+
+
+
+
